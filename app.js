@@ -114,7 +114,7 @@ let sum = (a, b, c, d) => a + b + c + d;
 console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = array => ({
+let objectLit = () => ({
   key1: 'value1',
   key2: 'value2',
   key3: 'value3',
@@ -155,7 +155,7 @@ let joe = new Student('Joe', 'Schmoe', 100);
 //   hometown: hometown,
 // });
 // ***** REFACTOR BELOW *****
-// let joe = student('Joe', 'Schmoe', 100);
+// let joe = student('Joey', 'Schmoe', 100);
 
 // DONE: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
@@ -200,17 +200,22 @@ Student.prototype.scope = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+
+// "this" inside the scope of the joe object
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+
+// Since the arrow function is defined outside of any context, the surrounding scope is likely the global scope."this" in the scopeArrow will refer to the window or global object.
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+
+// Arrow functions dont have their own "this" binding and inherit it from the surround scope instead. Arrow functions are not suitable for scenarios where you need to use constructor functions ot prototype methods.
