@@ -6,7 +6,7 @@ const theOldWay = function (course) {
   return `I am currently enrolled in ${course}`;
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('The old way:', theOldWay('Code 301'));
 
 
@@ -17,7 +17,7 @@ const theNewWay = (course) => {
   return `I am currently enrolled in ${course}`;
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('The new way:', theNewWay('Code 301'));
 
 
@@ -27,7 +27,7 @@ const withoutParens = course => {
   return `I am currently enrolled in ${course}`;
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('Without parens:', withoutParens('Code 301'));
 
 
@@ -37,7 +37,7 @@ console.log('Without parens:', withoutParens('Code 301'));
 // Without an arrow function, we need to explicitly type "return"
 const oneLiner = course => `I cam currently enrolled in ${course}`;
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('As a one-liner:', oneLiner('Code 301'));
 
 
@@ -48,7 +48,7 @@ const add = function (num1, num2) {
   return `${num1} + ${num2} = ${num1 + num2}`;
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('Let\'s do some math:', add(4, 5));
 
 
@@ -57,7 +57,7 @@ console.log('Let\'s do some math:', add(4, 5));
 // We can only remove the parentheses when there is a single parameter
 const addOneLiner = (num1, num2) => `${num1} + ${num2} = ${num1 + num2}`;
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('Add as a one-liner:', addOneLiner(4, 5));
 
 
@@ -69,7 +69,7 @@ const multiLiner = word => {
   return word;
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('Multi-line arrow function:', multiLiner('hello'));
 
 
@@ -84,7 +84,7 @@ const oldObject = function (array) {
   };
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('Hello from the old object function', oldObject(['hi', 'hello', 'are you there?']));
 
 
@@ -97,7 +97,7 @@ const newObject = array => ({
   thirdValue: array[2]
 });
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log('Hello from the new object function', newObject(['hi', 'hello', 'are you there?']));
 
 
@@ -110,7 +110,7 @@ console.log('Hello from the new object function', newObject(['hi', 'hello', 'are
 
 let sum = (a, b, c, d) => a + b + c + d;
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log(sum(1, 2, 3, 4));
 
 
@@ -120,7 +120,7 @@ let objectLit = array => ({
   key3: 'value3',
 });
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log(objectLit());
 
 
@@ -130,50 +130,66 @@ let sumAndProduct = (a, b) => {
   return [sum, product];
 };
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log(sumAndProduct(3, 9));
 
 
 let message = name => `Hello, ${name}!`;
 
-// done: Uncomment the following line of code to see the output in the browser console
+// DONE: Uncomment the following line of code to see the output in the browser console
 console.log(message('Allie'));
 
 
-let student = (name, age, hometown) => ({
-  name: name,
-  age: age,
-  hometown: hometown,
-});
+let Student = function (name, age, hometown) {
+  this.name = name;
+  this.age = age;
+  this.hometown = hometown;
+};
 
-let joe = student('Joe', 'Schmoe', 100);
+let joe = new Student('Joe', 'Schmoe', 100);
 
-// done: Uncomment the following line of code to see the output in the browser console
+// ***** REFACTOR BELOW *****
+// let student = (name, age, hometown) => ({
+//   name: name,
+//   age: age,
+//   hometown: hometown,
+// });
+// ***** REFACTOR BELOW *****
+// let joe = student('Joe', 'Schmoe', 100);
+
+// DONE: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
 console.log(joe);
 
-// done: After viewing the previous console.log(), return the code to a working state.
-
-
+// DONE: After viewing the previous console.log(), return the code to a working state.
 
 Student.prototype.greeting = function () {
   return `Hi, my name is ${this.name}`;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
+// ***** REFACTOR BELOW *****
+// student.greeting = () => {
+//   return `Hi, my name is ${joe.name}`;
+// };
+
+// DONE: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
 
-// TODO: After viewing the previous console.log(), return the code to a working state.
+console.log(joe.greeting());
+// ***** REFACTOR BELOW *****
+// console.log(student.greeting());
 
+// DONE: After viewing the previous console.log(), return the code to a working state.
 
+// ***** REFACTOR BELOW *****
+Student.courseName = () => {return 'This student is enrolled in Code 301.'};
 
-Student.courseName = function () {
-  return 'This student is enrolled in Code 301.';
-};
+// Student.courseName = function () {
+//   return 'This student is enrolled in Code 301.';
+// };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+// DONE: Uncomment the following line of code to see the output in the browser console
+console.log(Student.courseName());
 
 
 
