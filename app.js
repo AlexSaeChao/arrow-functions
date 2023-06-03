@@ -155,7 +155,7 @@ let joe = new Student('Joe', 'Schmoe', 100);
 //   hometown: hometown,
 // });
 // ***** REFACTOR BELOW *****
-// let joe = student('Joey', 'Schmoe', 100);
+// let joe = student('Joe', 'Schmoe', 100);
 
 // DONE: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
